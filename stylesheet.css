@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+img{
+    max-width: 100%;
+}
+
+.recipe-container{
+    background-color: white;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.recipe-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+header input{
+    background-color: #dff8fd;
+    border: #c7c7bc 1px solid;
+    border-radius: 5px;
+    padding: .3rem 1rem;
+    /* margin-right: -5rem; */
+}
+
+header button{
+    color: #48b7ce;
+    border: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    /* margin-left: -10rem; */
+}
+
+.fav-meals{
+    margin: 1rem 0;
+    background-color: #ece9f3;
+    text-align: center;
+    padding: 0.5rem;
+    border: none;
+    box-shadow: 0 0 5px #d3d1d8;
+
+}
+
+.fav-meals ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fav-meals img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
