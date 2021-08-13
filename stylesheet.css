@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     margin: 0;
     background-color: #FFDEE9;
@@ -14,14 +17,16 @@ img{
 }
 
 .recipe-container{
+    /* max-height: 90vh; */
     background-color: white;
-    width: 500px;
+    width: 400px;
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    margin-top: 2rem;
 }
 
 .recipe-header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding-top: 1rem;
 }
@@ -30,8 +35,8 @@ header input{
     background-color: #dff8fd;
     border: #c7c7bc 1px solid;
     border-radius: 5px;
-    padding: .3rem 1rem;
-    /* margin-right: -5rem; */
+    padding: .3rem .5rem;
+    margin-left: 4rem;
 }
 
 header button{
@@ -39,7 +44,7 @@ header button{
     border: none;
     font-size: 1.5rem;
     background-color: transparent;
-    /* margin-left: -10rem; */
+    margin-right: 4rem;
 }
 
 .fav-meals{
@@ -55,12 +60,73 @@ header button{
 .fav-meals ul{
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    padding: 0;
+}
+
+.fav-meals li{
+    /* cursor: pointer; */
+    position: relative;
+    margin: 5px;
+    width: 100px;
 }
 
 .fav-meals img{
+    padding: 0 .3rem;
     height: 100px;
     width: 100px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.fav-meals span{
+    display: inline-block;
+    /* font-size: large; */
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.meals{
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+
+}
+
+
+.meal .meal-header{
+    position: relative;
+}
+
+.meal .heading{
+    position: absolute;
+    top: 10px;
+    background-color: white;
+    padding: 0 .5rem;
+    font-weight: bold;
+    color: rgb(161, 144, 111);
+    border-top-right-radius:  5px;
+    border-bottom-right-radius: 5px;
+}
+
+.meal .meal-image img{
+   object-fit: cover;
+   height: 400px;
+   width: 100%;
+}
+
+.meal .meal-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.meal .meal-body button{
+    border: none;
+    background-color: transparent;
+    color: rgb(197, 188, 188);
+    cursor: pointer;
+    font-size: 1.2rem;
 }
