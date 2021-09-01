@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100rem;
+    min-height: 100vh;
 
 }
 
@@ -18,12 +18,11 @@ img{
 }
 
 .recipe-container{
-    /* max-height: 90vh; */
-    /* height: 100px; */
     background-color: white;
     width: 400px;
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
-    margin: 2rem 0;
+    overflow: hidden;
+    margin: 5rem;
 }
 
 .recipe-header{
@@ -93,6 +92,7 @@ header button{
 .meals{
     margin: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    
 
 }
 
@@ -135,3 +135,48 @@ header button{
 .meal-body .fav-btn.active {
     color: rebeccapurple;
 }
+
+.meal-info-container{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal-info-container.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+.mealPopup{
+    position: relative;
+    background-color: white;
+    max-height: 100vh;
+    width:500px ;
+    padding: 0 2rem;
+    overflow: auto;
+}
+
+/* .meal-info{
+    position: relative;
+    background-color: white;
+    max-height: 100vh;
+    width:500px ;
+    padding: 0 2rem;
+    overflow: auto;
+} */
+
+.popup-button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 4px;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+

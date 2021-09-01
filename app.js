@@ -1,6 +1,9 @@
 const meal = document.querySelector(".meals")
 const button = document.querySelector(".header-btn")
 const input = document.querySelector("input")
+const popupMealContainer = document.querySelector(".meal-info-container");
+const popupButton = document.querySelector(".popup-button");
+const mealInfo = document.querySelector(".meal-info")
 
 getRandomMeal()
 async function getRandomMeal() {
@@ -8,6 +11,7 @@ async function getRandomMeal() {
     // console.log(randomMeal)
     const oneMeal = randomMeal.meals[0];
     addMeals(oneMeal);
+    console.log(oneMeal)
 
 }
 
@@ -32,14 +36,18 @@ function addMeals(mealData) {
 
             </div>
     `
-    meal.insertAdjacentElement("afterbegin", emptyMeal)
 
+
+    meal.insertAdjacentElement("afterbegin", emptyMeal)
     const btn = meal.querySelector(".meal-body .fav-btn");
     btn.addEventListener("click", () => {
         btn.classList.toggle("active")
     })
-}
 
+    emptyMeal.addEventListener("click", () => {
+        showMealPopup(mealData)
+    })
+}
 
 async function getMealsBySearch(term) {
     const resp = await fetch(
@@ -49,7 +57,6 @@ async function getMealsBySearch(term) {
     const respData = await resp.json();
     const meal = respData.meals;
     // console.log(meal)
-
     return meal;
 }
 
@@ -65,4 +72,27 @@ button.addEventListener("click", async () => {
             addMeals(meal);
         });
     }
+    else {
+        alert(" blah blah blah ! No such meal exist ")
+    }
 });
+
+popupButton.addEventListener("click", () => {
+    popupMealContainer.classList.add("hidden");
+})
+
+function showMealPopup(mealData) {
+    mealInfo.innerHTML = " "
+    const emptyMealinfo = document.createElement("div")
+    emptyMealinfo.innerHTML = `
+    <h1> ${mealData.strMeal}</h1>
+    <img src="${mealData.strMealThumb}" alt="">
+    <h3> Instructions </h3>
+    <div>
+        <p>${mealData.strInstructions}</p>
+    </div>
+   `
+    mealInfo.insertAdjacentElement("afterbegin", emptyMealinfo)
+
+    popupMealContainer.classList.remove("hidden")
+}
